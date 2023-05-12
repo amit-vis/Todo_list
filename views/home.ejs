@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title%>
+    </title>
+    <!-- here we have add the required moduele -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/2de318dfea.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+    <div class="container-sm text-center mt-2">
+        <h1>TODO App</h1>
+        <!-- here is the HTML code to create the todo list -->
+        <form action="/create-todo" method="post">
+            <hr>
+            <!-- here we have added text input tag -->
+            <div class="form-floating mb-3 description-div">
+                <input type="text" name="description" class="form-control description" id="floatingInput">
+                <label for="floatingInput">DESCRIPTION</label>
+            </div>
+            <hr>
+            <div class="row g-2 select-date-div">
+                <div class="form-floating col-6">
+                    <!-- here we have added a select tag and option tag-->
+                    <select class="form-select selection" name="select" id="floatingSelect"
+                        aria-label="Floating label select example">
+                        <option selected>Choose Category</option>
+                        <option value="school">School</option>
+                        <option value="personal">Personal</option>
+                        <option value="work">Work</option>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="others">Others</option>
+                    </select>
+                    <label for="floatingSelect">CATEGORY</label>
+                </div>
+
+                <!-- here we have added a input tag for date -->
+                <div class="form-floating mb-3 col-6">
+                    <input type="date" name="date" class="form-control date" id="floatingInput">
+                    <label for="floatingInput">DUE DATE</label>
+                </div>
+            </div>
+            <!-- here we have added a button to add the todo list -->
+            <button type="submit" class="btn btn-secondary"><i class="fa-solid fa-plus"></i> ADD TASK</button>
+        </form>
+
+        <!-- here is the HTML code to delete a todo list -->
+        <form action="/delete-todo" method="post">
+        <button type="submit" class="btn btn-danger" id="deleteButton"><i class="fa-solid fa-trash"></i> DELETE TASK</button>
+        
+        <!-- here we have added a unordered list to show the all data here -->
+        <ul class="text-start todo-unorder-list">
+            <%for(let i of todo_list){%>
+                <hr>
+                <li>
+                    <!-- here is the HTML code for span tag and input checkbox tag -->
+                    <span class="description-list"><input class="form-check-input" name="delete" value="<%=i._id%>" type="checkbox" id="checkboxNoLabel" aria-label="..." onchange="changeBgColor(this)">&nbsp;&nbsp;&nbsp;&nbsp; <%=i.description%></span>
+                    <span class="select-list">
+                        <%=i.select%>
+                    </span>
+
+                    <!-- here is the HTML code to show the date -->
+                    <span class="date-list"><i class="fa-solid fa-calendar-days"></i>
+                        <%=i.date%>
+                    </span>
+                </li>
+                <hr>
+                <%}%>
+        </ul>
+    </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="/js/home.js"></script>
+</body>
+
+</html>

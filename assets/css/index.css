@@ -1,0 +1,62 @@
+/* styling part is performe here*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* I have configured the styling of the description input tag, which adds a todo list item. */
+.description {
+    border: none;
+    outline: 0;
+}
+
+.description:hover{
+    background-color: #d7cfcf;
+}
+
+/* I have configured the styling of the select tag, which adds a option for todo list item. */
+.selection:hover{
+    background-color: #d7cfcf;
+}
+
+/* I have configured the hover styling of the date input tag, which adds a date for todo list item. */
+.date:hover{
+    background-color: #d7cfcf;
+}
+
+/* I have configured the styling of the unordered list which shows the todo data */
+.todo-unorder-list {
+    list-style-type: none;
+}
+
+/* I have configured the span tag which is show the data of the description input tag */
+.description-list {
+    margin-left: 2%;
+}
+
+/* I have configured the styling of the date list items which shows the date */
+.date-list {
+    display: block;
+    width: 10%;
+    margin-left: 5%;
+    margin-top: -1.5%;
+}
+
+/* I have configured the styling of the select list items which shows the select data */
+.select-list {
+    margin-left: 70%;
+    display: block;
+    text-align: center;
+    width: 8%;
+    margin-top: -2%;
+}
+
+li {
+    height: 40px;
+}
+/* here we have styled our delete button */
+.btn-danger {
+    background-color: red;
+    margin-left: 20%;
+    margin-top: -5%;
+}
