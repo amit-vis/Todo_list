@@ -1,7 +1,7 @@
 // here we have call the mongoose to connect the database.
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://0.0.0.0/TODO_lib');
+mongoose.connect('mongodb+srv://amit200698:g2UpuxXvgsVPvBwy@cluster0.ajgkki6.mongodb.net/');
 
 var db = mongoose.connection;
 
