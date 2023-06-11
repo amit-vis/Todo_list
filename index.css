@@ -43,9 +43,10 @@ body {
     background-color: transparent;
     width: 85%;
     border: none;
-    padding-top: 4%;
+    padding-top: 3%;
     outline: 0;
     font-size: 20px;
+    margin-bottom: 10px;
 }
 
 /* circle plus icon style */
@@ -167,34 +168,7 @@ ul li:hover span {
     visibility: visible;
 }
 
-/* Responsive styles */
-@media (max-width: 1200px) {
-    #container {
-        width: 60%;
-        margin-left: 20%;
-    }
-
-    #task-div {
-        height: auto;
-    }
-
-    #task {
-        width: 100%;
-    }
-
-    #complete-task {
-        margin-top: 2%;
-    }
-
-    #complete {
-        margin-right: auto;
-    }
-
-    #task-left {
-        margin-right: auto;
-    }
-}
-
+/* make our site responsive from 600px to 1200px */
 @media (max-width: 1200px) {
     #container {
         width: 60%;
